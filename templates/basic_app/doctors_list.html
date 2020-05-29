@@ -1,0 +1,24 @@
+{% extends 'basic_app/base.html'%}
+{% block body_block %}
+{% load static %}
+<link  href="{% static "myblog1.css" %}" rel="stylesheet" >
+    <center><h3><span class="head">doctors list</span></h3></center>
+    <table class="table table-striped w-auto">
+      <thead>
+        <th>SN</th>
+        <th>doctor name</th>
+        <th>specality</th>
+        <th>Delete</th>
+        <th>Update</th>
+      </thead>
+      {% for doctors in doctors_list %}
+      <tr>
+        <td>{{doctors.id}}</td>
+        <td><a href="{{ dname.id }}">{{ doctors.dname }}</a></td>
+        <td>{{doctors.specality}}</td>
+        <td><a class = "btn btn-danger" href="{% url 'basic_app:doctors_confirm_delete' pk=doctors.pk %}">Delete</a></td>
+        <td><a class = "btn btn-warning" href="{% url 'basic_app:updated' pk=doctors.pk %}">Update</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+{% endblock %}

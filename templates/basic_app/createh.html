@@ -1,0 +1,44 @@
+{% extends 'basic_app/base.html'%}
+{%load static%}
+{% block body_block %}
+<link  href="{% static "myblog1.css" %}" rel="stylesheet" >
+<div class="container" style="width:70%;">
+  <form class="well form-horizontal" method="POST">
+    {% csrf_token %}
+    <legend><center><h3><span class="head">New Doctor Entry</span></h3></center></legend>
+    <div class="form-group">
+      <label class="col-md-3 control-label form-control-label">HOSPITAL-NAME</label>
+      <div class="col-md-3 inputGroupContainer">
+        <div class="input-group">
+          <span class="input-group-addon" ><i class="glyphicon glyphicon-home"></i></span>
+          {{form.hname}}
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 control-label form-control-label">Location</label>
+      <div class="col-md-3 inputGroupContainer">
+        <div class="input-group">
+          <span class="input-group-addon" ><i class="glyphicon glyphicon-globe"></i></span>
+          {{form.location}}
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 control-label form-control-label">Doctor</label>
+      <div class="col-md-3 inputGroupContainer">
+        <div class="input-group">
+          <span class="input-group-addon" ><i class="glyphicon glyphicon-user"></i></span>
+          {{form.doctor}}
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-3 control-label form-control-label"></label>
+      <div class="col-md-3">
+    <button  class ="btn btn-warning" type="submit"> ADD HOSPITAL <span class="glyphicon glyphicon-send"></span></button>
+    </div>
+    </div>
+  </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'basic_app/base.html'%}
+{% block body_block %}
+    <h3><strong><span style="background-color:yellow">Hospital detail as below</span></strong></h3>
+    <p><strong>Hospital name: </strong> {{ hospital_details.hname }}</p>
+    <p><strong>Hospital Location : </strong>{{ hospital_details.location }}</p>
+    {% for i in hospital_details.hdoctors.all %}
+    <p><strong>doctors  : </strong>{{ i.dname }}</p>
+    {% endfor %}
+    <h3><strong><span style="background-color:yellow">Patients admited:</span></strong></h3>
+    <div class="list-group" style="width:50%">
+      <li class="list-group-item active"><strong>patient name :</strong></li>
+    {% for i in hospital_details.patients.all %}
+    <li class="list-group-item">{{i.id}}. {{i.name}}</li>
+    {%endfor%}
+    </div>
+   <p><a class = "btn btn-danger"href="{% url 'basic_app:hospital_confirm_delete' pk=hospital_details.pk %}">delete</a></p>
+{% endblock %}

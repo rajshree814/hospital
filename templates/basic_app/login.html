@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      {% load static %}
+    <meta charset="utf-8">
+    <title></title>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/4.7.0/jquery.min.js">  </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.7.0/js/bootstrap.min.js"> </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https//maxcdn.bootstrapcdn.com/font-awesome.min.ass">
+  </head>
+  <body style="font-family:Arial; font-size:15px;" >
+    <div class="page-bg" style="background-image:url({% static 'login.jpg'%});
+      -webkit-filter:blur(5px);
+      -moz-filter:blur(5px);
+      -o-filter:blur(5px);
+      -ms-filter:blur(5px);
+      filter: blur(5px);
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top:0;
+      left:0;
+      z-index:-1;">
+
+    </div>
+<div class="container" style="margin:auto;margin-top:150px;">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header">
+  <div class="card-body">
+  <form  class="well form-vertical" method="POST" style="border-style:inset; box-shadow:5px 10px 8px 10px #888888 ; background:linear-gradient(to right,#FFCC99 15%,#CCCC99 15%,#CCCC99 85%,#FFCC99 85%);">
+    <legend><center><h3><strong>Login Here</strong></h3></center></legend>
+    <center><div class="input-group form-group" >
+      <div class="input-group-prepend" >
+        <span class="input-group-text" style="border-style:inset; background:linear-gradient(to bottom,#33ccff 19%,#ff99cc 100%);">username <i class="fa fa-user"></i></span>
+    {% csrf_token %}
+    {{form.username}}
+    </div>
+  </div></center>
+    <center><div class="input-group form-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" style="border-style:inset;background:linear-gradient(to bottom,#33ccff 19%,#ff99cc 100%);">password<i class="fa fa-key"></i></span>
+    {{form.password}}
+  </div>
+</div></center>
+  <div class="form-group">
+      <center><input class="btn float-right login_btn"type="submit" style="border-style:inset; background:linear-gradient(to bottom,#33ccff 19%,#ff99cc 100%);" name="" value="Login"></center>
+  </div>
+  <legend><center><p><strong>Or login via below social media accounts</strong></p></center></legen
+  <div class="d-flex justify-content-end social_icon">
+    <center><span><i class="fa fa-facebook-square" style="font-size:36px ; font-color:blue"></i></span>
+    <span><i class="fa fa-google-plus-square" style="font-size:36px"></i></span>
+    <span><i class="fa fa-twitter-square" style="font-size:36px"></i></span></center>
+  <div class="card-footer">
+    <div class="d-flex justify-content-center links">
+      <center>Don't have an account? <a href="{% url 'basic_app:signup' %}">SignUp</a></center>
+    </div>
+  </div>
+  </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

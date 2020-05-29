@@ -1,0 +1,83 @@
+th , td{
+  border-style: inset;
+  overflow:auto;
+  resize: both;
+}
+thead{
+  border-style:ridge;
+  background:linear-gradient(red,yellow);
+}
+
+table.table{
+  margin: auto;
+  border-style:inset; border-spacing:5px; box-shadow:5px 5px 5px 5px gray ;
+  background:linear-gradient(to right,#CCff99 15%,#CCff99 15%,#CC9999 85%,#CC9999 85%);
+  width: auto;
+
+}
+
+h1 {
+    text-decoration-style: double;
+    text-decoration: underline;
+    text-decoration-color: #CC9999;
+
+}
+form.well.form-horizontal{
+  background:linear-gradient(to right,#CC9999,yellow);
+  background-image:url({% static 'image.jpg'%});
+
+}
+.head{
+  background: red;
+  border-style:inset; border-spacing:5px; box-shadow:5px 5px 5px 5px gray ;
+}
+
+span{
+  background:linear-gradient(to right,#CC9999,yellow);
+}
+
+@keyframes example{
+  0% {color: red;
+    margin-left: 0px;}
+  25%{color: white;
+    margin-left: 25%;}
+  50%{color: purple;
+    margin-left: 50%;}
+  75%{color: yellow;
+    margin-left: 75%;}
+    100%{color: white;
+      margin-left: 0%;}
+      0% {color: red;
+        margin-left: 0px;}
+
+}
+div.span{
+  color: white;
+  font-weight: bold;
+  animation-name:example;
+  animation-duration: 30s;
+  animation-delay: -2s;
+  animation-iteration-count: infinite;
+}
+.container-fluid{
+  margin-left:25%;
+}
+
+h3.index{
+  width: 500px;
+  word-wrap: break-word;
+  font-style: normal;
+  font-family:sans-serif;
+  text-shadow: 5px;
+  color: yellow;
+
+}
+h1.heading{
+
+}
+h3.login1{
+  font-family:sans-serif;
+  text-shadow: 5px;
+  color: red;
+
+}

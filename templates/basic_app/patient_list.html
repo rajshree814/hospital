@@ -1,0 +1,51 @@
+{% extends 'basic_app/base.html'%}
+{% block body_block %}
+{% load static %}
+<link  href="{% static "myblog1.css" %}" rel="stylesheet" >
+    <center><h3><span class="head">Patient record</span></h3></center>
+    <table class="table table-striped w-auto">
+      <thead style="border-style:ridge">
+        <th>SN</th>
+        <th>Patient name </th>
+        <th>Hospital admited</th>``
+        <th>sex</th>
+        <th>date_of_birth</th>
+        <th>date_of_admited</th>
+        <!-- <th>date_of_discharge</th> -->
+        <th>doctor_assigned</th>
+        <th>age</th>
+        <th>Email ID</th>
+        <!-- <th>Height</th>
+        <th>Weight</th> -->
+        <th>BMI</th>
+        <th>Contact Number</th>
+        <th>daysadmited</th>
+        <th>Delete</th>
+        <th>Update</th>
+      </thead>
+      {% for patient in list %}
+      <tr class="table-info">
+        <td>{{patient.id}}</td>
+        <td><a href="{{ patient.id }}">{{ patient.name }}</a></td>
+        <td>{{ patient.hospitalname}}</td>
+        <td>{{ patient.sex }}</td>
+        <td>{{ patient.date_of_birth }}</td>
+        <td>{{patient.date_of_admited}}</td>
+        <!-- <td>{{patient.date_of_discharge}}</td> -->
+        <td>{{patient.doctor_assigned.dname}}</td>
+        <td>{{ patient.age }}</td>
+        <td>{{ patient.Emailid }}</td>
+        <!-- <td>{{ patient.height| floatformat:2 }}</td>
+        <td >{{ patient.Weight }}</td> -->
+        <td >{{patient.bmi| floatformat:2}} </td>
+        <td>{{ patient.contact_Number }}</td>
+        <td>{{ patient.daysadmited }}</td>
+        <td><a class = "btn btn-danger" href="{% url 'basic_app:patient_confirm_delete' pk=patient.pk %}">Delete</a></td>
+        <td><a class = "btn btn-warning" href="{% url 'basic_app:updatep' pk=patient.pk %}">Update</a></td>
+      </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
+
+'name','hospitalname','sex','date_of_birth','age','Emailid','height','Weight','contact_Number'

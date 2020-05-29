@@ -1,0 +1,129 @@
+{% extends 'basic_app/base.html'%}
+{% block body_block %}
+{% load static %}
+<link  href="{% static "myblog1.css" %}" rel="stylesheet" >
+<div class="container" style="width:80%;height70%;">
+    <form class="well form-horizontal" method="POST">
+       {% csrf_token %}
+       <legend><center><h3 ><span class="head">New Patient Registration</span></h3></center></legend>
+       <div class="form-group">
+         <label class="col-md-3 control-label form-control-label">FIRST-NAME</label>
+         <div class="col-md-3 inputGroupContainer">
+           <div class="input-group">
+             <span class="input-group-addon" ><i class="glyphicon glyphicon-user"></i></span>
+             {{form.name}}
+           </div>
+         </div>
+       </div>
+       <div class="form-group">
+         <label class="col-md-3 control-label form-control-label">HOSPITAL NAME</label>
+         <div class="col-md-3 inputGroupContainer">
+           <div class="input-group">
+             <span class="input-group-addon" ><i class="glyphicon glyphicon-chevron-down"></i></span>
+             {{form.hospitalname}}
+           </div>
+         </div>
+       </div>
+       <div class="form-group">
+         <label class="col-md-3 control-label form-control-label">SEX</label>
+         <div class="col-md-3 inputGroupContainer">
+           <div class="input-group">
+             <span class="input-group-addon" ><i class="glyphicon glyphicon-chevron-down"></i></span>
+             {{form.sex}}
+           </div>
+         </div>
+       </div>
+       <div class="form-group">
+         <label class="col-md-3 control-label form-control-label">DATE OF BIRTH</label>
+         <div class="col-md-3 inputGroupContainer">
+           <div class="input-group">
+             <span class="input-group-addon" ><i class="glyphicon glyphicon-calendar"></i></span>
+             {{form.date_of_birth}}
+           </div>
+         </div>
+       </div>
+       <div class="form-group">
+         <label class="col-md-3 control-label form-control-label">ADMITED ON</label>
+         <div class="col-md-3 inputGroupContainer">
+           <div class="input-group">
+             <span class="input-group-addon" ><i class="glyphicon glyphicon-calendar"></i></span>
+             {{form.date_of_admited}}
+           </div>
+         </div>
+       </div>
+       <div class="form-group">
+         <label class="col-md-3 control-label form-control-label">DISCHARGE ON</label>
+         <div class="col-md-3 inputGroupContainer">
+           <div class="input-group">
+             <span class="input-group-addon" ><i class="glyphicon glyphicon-calendar"></i></span>
+             {{form.date_of_discharge}}
+           </div>
+         </div>
+       </div>
+       <div class="form-group">
+         <label class="col-md-3 control-label form-control-label">WEIGHT</label>
+         <div class="col-md-3 inputGroupContainer">
+           <div class="input-group">
+             <span class="input-group-addon" ><i class="glyphicon glyphicon-scale"></i></span>
+             {{form.Weight}}
+           </div>
+         </div>
+       </div>
+       <div class="form-group">
+         <label class="col-md-3 control-label form-control-label">HEIGHT</label>
+         <div class="col-md-3 inputGroupContainer">
+           <div class="input-group">
+             <span class="input-group-addon" ><i class="glyphicon glyphicon-scale"></i></span>
+             {{form.height}}
+           </div>
+         </div>
+       </div>
+       <div class="form-group">
+         <label class="col-md-3 control-label form-control-label">EMAIL</label>
+         <div class="col-md-3 inputGroupContainer">
+           <div class="input-group">
+             <span class="input-group-addon" ><i class="glyphicon glyphicon-envelope"></i></span>
+             {{form.Emailid}}
+           </div>
+         </div>
+       </div>
+       <div class="form-group">
+         <label class="col-md-3 control-label form-control-label">DOCTOR ASSIGNED</label>
+         <div class="col-md-3 inputGroupContainer">
+           <div class="input-group">
+             <span class="input-group-addon" ><i class="glyphicon glyphicon-chevron-down"></i></span>
+             {{form.doctor_assigned}}
+           </div>
+         </div>
+       </div>
+       <div class="form-group">
+         <label class="col-md-3 control-label form-control-label">CAUSE</label>
+         <div class="col-md-3 inputGroupContainer">
+           <div class="input-group">
+             <span class="input-group-addon" ><i class="glyphicon glyphicon-chevron-down"></i></span>
+             {{form.cause}}
+           </div>
+         </div>
+       </div>
+       <div class="form-group">
+         <label class="col-md-3 control-label form-control-label">CONTACT NUMBER</label>
+         <div class="col-md-3 inputGroupContainer">
+           <div class="input-group">
+             <span class="input-group-addon" ><i class="glyphicon glyphicon-earphone"></i></span>
+             {{form.contact_Number}}
+           </div>
+         </div>
+       </div>
+
+
+       <!-- {{form.as_p}} -->
+       <div class="form-group">
+         <label class="col-md-3 control-label form-control-label"></label>
+         <div class="col-md-3">
+       <button  class ="btn btn-warning" type="submit"> ADD PATIENT <span class="glyphicon glyphicon-send"></span></button>
+       </div>
+       </div>
+    </form>
+
+    </div>
+{% endblock%}
